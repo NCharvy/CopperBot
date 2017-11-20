@@ -1,22 +1,24 @@
 <?php
     namespace CopperBot\System\Router;
 
-    private $headers;
-    private $baseUrl;
-
     class Interpret {
+        private $headers;
+        private $baseUrl;
+
         public function __construct(){
-            $baseHeaders = [
+            $baseHeaders = array(
                 "Access-Control-Allow-Origin" => "*",
                 "Access-Control-Allow-Headers" => "Origin, X-Requested-With, Content-Type, Accept, Authorization",
                 "Access-Control-Allow-Methods" => "GET, POST, PUT, DELETE"
-            ];
+            );
             $this->setHeaders($baseHeaders);
         }
 
         private function setHeaders($headers){
+            $this->headers = (isset($this->headers)) ? $this->headers : array();
+
             if(gettype($headers) !== "string"){
-                array_push($this->$headers);
+                array_merge($this->$headers, $headers);
             }
             else {
                 foreach($headers as $head){
@@ -59,7 +61,7 @@
             catch(Exception $e){
                 echo $e->getMessage();
             }
-            foreach($this->headers as $key, $value){
+            foreach($this->headers as $key => $value){
                 header($key . ":" . $value);
             }
             header("location:" . $this->getBaseUrl() . "/" . $redir);

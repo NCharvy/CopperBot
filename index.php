@@ -1,5 +1,4 @@
 <?php
-	use CopperBot\System\Core;
-
-	Core::init();
+    require_once __DIR__."/vendor/autoload.php";
+    require_once __DIR__."/system/core.php";
 	

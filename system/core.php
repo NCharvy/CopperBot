@@ -1,5 +1,5 @@
 <?php
-	namespace CopperBot\System;
+	namespace CopperBot;
 	
 	use CopperBot\System\Router\Interpret; 
 
@@ -7,7 +7,9 @@
 		private static $router;
 
 		public static function init(){
-			$this->router = new Interpret();
-			$this->router->routeCommand();
+			Core::$router = new Interpret();
+			Core::$router->routeCommand();
 		}
 	}
+
+	Core::init();
