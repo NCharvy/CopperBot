@@ -1,0 +1,19 @@
+{
+    "name": "NCharvy/CopperBot",
+    "version": "0.1",
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.1"
+    },
+    "authors": [
+        {
+            "name": "Nathan Charvy",
+            "email": "nathan.charvy@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CopperBot\\": "system"
+        }
+    }
+}
