@@ -1,4 +1,6 @@
 <?php
-    require_once __DIR__."/vendor/autoload.php";
-    require_once __DIR__."/system/core.php";
+require_once __DIR__."/vendor/autoload.php";
+
+$core = new CopperBot\System\Core();
+$core->init();
 	
